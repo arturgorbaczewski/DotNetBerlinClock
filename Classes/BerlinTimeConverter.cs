@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BerlinClock
 {
-    public class TimeConverter : ITimeConverter
+    public class BerlinTimeConverter : ITimeConverter
     {
-        public string convertTime(string aTime)
+        public string ConvertTime(string aTime)
         {
             throw new NotImplementedException();
         }
