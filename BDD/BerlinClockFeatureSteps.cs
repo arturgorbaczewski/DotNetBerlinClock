@@ -1,7 +1,8 @@
 ﻿using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BerlinClock.TimeConverters;
 
-namespace BerlinClock
+namespace BerlinClock.BDD
 {
     [Binding]
     public class TheBerlinClockSteps
