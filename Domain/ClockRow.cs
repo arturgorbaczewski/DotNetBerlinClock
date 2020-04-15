@@ -1,4 +1,5 @@
 ﻿using BerlinClock.Consts;
+using BerlinClock.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,9 @@ namespace BerlinClock.Domain
     {
         private IEnumerable<ClockLight> ClockLights;
 
-        public ClockRow(int numberOfClockLights)
+        public ClockRow(RowType rowType, int numberOfClockLights, int numberOfClockLightsToTurnOn)
         {
-            InitializeClockLights(numberOfClockLights);
-        }
-
-        public void SetClockRowTime()
-        {
-            //TODO: calculate numberOfClockLightsTurnedOn
+            InitializeClockLights(rowType, numberOfClockLights, numberOfClockLightsToTurnOn);
         }
 
         public string GetRowContent()
@@ -26,15 +22,41 @@ namespace BerlinClock.Domain
             return string.Join(string.Empty, ClockLights.Select(x => x.LightColor.ToString()));
         }
 
-        private void InitializeClockLights(int numberOfClockLights)
+        private void InitializeClockLights(RowType rowType, int numberOfClockLights, int numberOfClockLightsToTurnOn)
         {
             var clockLights = new List<ClockLight>();
-            for (int i = 0; i < numberOfClockLights; i++)
+            for (int i = 1; i < numberOfClockLights + 1; i++)
             {
-                clockLights.Add(new ClockLight { LightColor = LightColor.None });
+                if (i < numberOfClockLightsToTurnOn + 1)
+                    clockLights.Add(new ClockLight { LightColor = PickLightColor(i, rowType) });
+                else
+                    clockLights.Add(new ClockLight { LightColor = LightColor.None });
             }
 
             ClockLights = clockLights;
+        }
+
+        private string PickLightColor(int clockLightNumber, RowType rowType)
+        {
+            switch (rowType)
+            {
+                case RowType.TopLightLow:
+                        return LightColor.Yellow;
+                case RowType.TopHourRow:
+                    return LightColor.Red;
+                case RowType.BottomHourRow:
+                        return LightColor.Red;
+                case RowType.TopMinuteRow:
+                    {
+                        return (clockLightNumber != 0 && clockLightNumber % 3 == 0) 
+                            ? LightColor.Red 
+                            : LightColor.Yellow;
+                    }
+                case RowType.BottomMinuteRow:
+                        return LightColor.Yellow;
+                default:
+                    return LightColor.None;
+            }          
         }
     }
 }

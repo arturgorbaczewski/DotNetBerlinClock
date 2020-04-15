@@ -1,9 +1,7 @@
-﻿using BerlinClock.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using BerlinClock.Enums;
 
 namespace BerlinClock.Domain
 {
@@ -14,13 +12,16 @@ namespace BerlinClock.Domain
             if (string.IsNullOrWhiteSpace(time))
                 throw new ArgumentNullException("Time cannot be empty");
 
-            var layout = CreateClockLayout(time);
+            if(!TimeSpan.TryParse(time, out var timespan))
+                throw new ArgumentNullException("Time format is invalid");
+
+            var layout = CreateClockLayout(timespan);
             var fancyTime = ConvertLayoutToTime(layout);
 
             return fancyTime;
         }
 
-        private IEnumerable<ClockRow> CreateClockLayout(string time)
+        private IEnumerable<ClockRow> CreateClockLayout(TimeSpan time)
         {
             RowType[] orderedLayout = 
             {
@@ -33,7 +34,7 @@ namespace BerlinClock.Domain
 
             foreach (var layoutLayer in orderedLayout)
             {
-                yield return ClockRowFactory.CreateClockRow(layoutLayer);
+                yield return ClockRowFactory.CreateClockRow(layoutLayer, time);
             }     
         }
 
@@ -45,7 +46,7 @@ namespace BerlinClock.Domain
                 sb.AppendLine(row.GetRowContent());
             }
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd(Environment.NewLine.ToCharArray());
         }
     }
 }
