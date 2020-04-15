@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BerlinClock.Domain;
 
 namespace BerlinClock.TimeConverters
 {
     public class TimeConverter : ITimeConverter
     {
+        private readonly IFancyClock _clock;
+
+        public TimeConverter(IFancyClock clock)
+        {
+            _clock = clock;
+        }
+
         public string ConvertTime(string aTime)
         {
-            throw new NotImplementedException();
+            return _clock.GetFormattedTime(aTime);
         }
     }
 }

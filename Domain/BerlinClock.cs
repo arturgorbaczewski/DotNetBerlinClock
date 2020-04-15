@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BerlinClock.Domain
 {
-    public class BerlinClock
+    public class BerlinClock : IFancyClock
     {
+        public string GetFormattedTime(string time)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
