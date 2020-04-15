@@ -53,14 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
-    <Compile Include="ClockDomain\Interfaces\IClockRow.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockRow.cs" />
     <Compile Include="Consts\LightColor.cs" />
-    <Compile Include="ClockDomain\ClockLight.cs" />
+    <Compile Include="ClockDomain\Models\ClockLight.cs" />
     <Compile Include="ClockDomain\ClockRowFactory.cs" />
     <Compile Include="ClockDomain\FancyBerlinClock.cs" />
-    <Compile Include="ClockDomain\Interfaces\IClock.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClock.cs" />
     <Compile Include="ClockDomain\ClockRow.cs" />
-    <Compile Include="TimeDomain\Time.cs" />
+    <Compile Include="TimeDomain\DomainFacade\Interfaces\ITimeFacade.cs" />
+    <Compile Include="TimeDomain\Models\Time.cs" />
     <Compile Include="Enums\RowType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
@@ -70,6 +71,7 @@
     </Compile>
     <Compile Include="TimeConverters\TimeConverter.cs" />
     <Compile Include="TimeConverters\ITimeConverter.cs" />
+    <Compile Include="TimeDomain\DomainFacade\TimeFacade.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,6 +84,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

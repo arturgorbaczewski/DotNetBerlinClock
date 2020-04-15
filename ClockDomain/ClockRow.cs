@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using BerlinClock.ClockDomain.Interfaces;
+using BerlinClock.ClockDomain.DomainFacade.Interfaces;
+using BerlinClock.ClockDomain.Models;
 using BerlinClock.Consts;
 using BerlinClock.Enums;
 

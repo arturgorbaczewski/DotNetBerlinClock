@@ -1,4 +1,4 @@
-﻿namespace BerlinClock.ClockDomain.Interfaces
+﻿namespace BerlinClock.ClockDomain.DomainFacade.Interfaces
 {
     public interface IClockRow
     {

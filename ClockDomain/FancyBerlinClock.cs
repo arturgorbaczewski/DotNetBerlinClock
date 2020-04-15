@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BerlinClock.ClockDomain.Interfaces;
+using BerlinClock.ClockDomain.DomainFacade.Interfaces;
 using BerlinClock.Enums;
-using BerlinClock.TimeDomain;
+using BerlinClock.TimeDomain.DomainFacade.Interfaces;
+using BerlinClock.TimeDomain.Models;
 
 namespace BerlinClock.ClockDomain
 {
     public class FancyBerlinClock : IFancyClock
     {
-        public string GetFormattedTime(string aTime)
+        private readonly ITimeFacade _timeFacade;
+
+        public FancyBerlinClock(ITimeFacade timeFacade)
         {
-            var time = new Time(aTime);
+            _timeFacade = timeFacade;
+        }
+
+        public string GetFormattedTime(string strTime)
+        {
+            var time = _timeFacade.GetTime(strTime);
             if(time.IsInvalid)
                 throw new ArgumentNullException("Time format is invalid");
 

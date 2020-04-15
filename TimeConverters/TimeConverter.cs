@@ -1,5 +1,6 @@
 ﻿using BerlinClock.ClockDomain;
-using BerlinClock.ClockDomain.Interfaces;
+using BerlinClock.ClockDomain.DomainFacade.Interfaces;
+using BerlinClock.DomainFacade.TimeDomain;
 
 namespace BerlinClock.TimeConverters
 {
@@ -8,7 +9,7 @@ namespace BerlinClock.TimeConverters
         private readonly IFancyClock _clock;
 
         public TimeConverter()
-            : this(new FancyBerlinClock()) // TODO: rewrite to DI container with service locator
+            : this(new FancyBerlinClock(new TimeFacade())) // TODO: rewrite to DI container with service locator
         { }
 
         internal TimeConverter(IFancyClock clock)

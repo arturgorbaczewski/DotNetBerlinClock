@@ -1,4 +1,4 @@
-﻿namespace BerlinClock.ClockDomain
+﻿namespace BerlinClock.ClockDomain.Models
 {
     public class ClockLight
     {

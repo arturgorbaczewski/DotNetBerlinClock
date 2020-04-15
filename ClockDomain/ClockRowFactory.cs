@@ -1,6 +1,6 @@
 ﻿using System;
 using BerlinClock.Enums;
-using BerlinClock.TimeDomain;
+using BerlinClock.TimeDomain.Models;
 
 namespace BerlinClock.ClockDomain
 {
