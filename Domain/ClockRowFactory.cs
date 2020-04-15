@@ -11,23 +11,23 @@ namespace BerlinClock.Domain
             {
                 case RowType.TopLightLow:
                     {
-                        return new ClockRow();
+                        return new ClockRow(1);
                     }
                 case RowType.TopHourRow:
                     {
-                        return new ClockRow();
+                        return new ClockRow(4);
                     }
                 case RowType.BottomHourRow:
                     {
-                        return new ClockRow();
+                        return new ClockRow(4);
                     }
                 case RowType.TopMinuteRow:
                     {
-                        return new ClockRow();
+                        return new ClockRow(11);
                     }
                 case RowType.BottomMinuteRow:
                     {
-                        return new ClockRow();
+                        return new ClockRow(4);
                     }
                 default:
                     throw new NotImplementedException();
