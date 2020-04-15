@@ -1,4 +1,4 @@
-﻿namespace BerlinClock.Domain
+﻿namespace BerlinClock.ClockDomain
 {
     public class ClockLight
     {

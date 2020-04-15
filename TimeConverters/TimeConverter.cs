@@ -1,4 +1,4 @@
-﻿using BerlinClock.Domain;
+﻿using BerlinClock.ClockDomain;
 
 namespace BerlinClock.TimeConverters
 {

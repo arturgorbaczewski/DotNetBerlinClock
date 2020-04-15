@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BerlinClock.Enums;
 
-namespace BerlinClock.Domain
+namespace BerlinClock.ClockDomain
 {
     public class FancyBerlinClock : IFancyClock
     {

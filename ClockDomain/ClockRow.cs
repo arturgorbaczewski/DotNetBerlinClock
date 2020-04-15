@@ -1,12 +1,9 @@
-﻿using BerlinClock.Consts;
-using BerlinClock.Enums;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BerlinClock.Consts;
+using BerlinClock.Enums;
 
-namespace BerlinClock.Domain
+namespace BerlinClock.ClockDomain
 {
     public class ClockRow
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using BerlinClock.Enums;
 
-namespace BerlinClock.Domain
+namespace BerlinClock.ClockDomain
 {
     public static class ClockRowFactory
     {
