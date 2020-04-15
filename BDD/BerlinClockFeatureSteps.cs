@@ -7,7 +7,7 @@ namespace BerlinClock.BDD
     [Binding]
     public class TheBerlinClockSteps
     {
-        private ITimeConverter _berlinClock = new BerlinTimeConverter();
+        private ITimeConverter _berlinClock = new TimeConverter();
         private string _theTime;
 
         

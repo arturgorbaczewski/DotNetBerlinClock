@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BerlinClock.TimeConverters
 {
-    public class BerlinTimeConverter : ITimeConverter
+    public class TimeConverter : ITimeConverter
     {
         public string ConvertTime(string aTime)
         {
