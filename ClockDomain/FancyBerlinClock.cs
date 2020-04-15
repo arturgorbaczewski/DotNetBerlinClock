@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 using BerlinClock.Enums;
+using BerlinClock.TimeDomain;
 
 namespace BerlinClock.ClockDomain
 {
     public class FancyBerlinClock : IFancyClock
     {
-        public string GetFormattedTime(string time)
+        public string GetFormattedTime(string aTime)
         {
-            if (string.IsNullOrWhiteSpace(time))
-                throw new ArgumentNullException("Time cannot be empty");
-
-            if(!TimeSpan.TryParse(time, out var timespan))
+            var time = new Time(aTime);
+            if(!time.IsValid())
                 throw new ArgumentNullException("Time format is invalid");
 
-            var layout = CreateClockLayout(timespan);
+            var layout = CreateClockLayout(time);
             var fancyTime = ConvertLayoutToTime(layout);
 
             return fancyTime;
         }
 
-        private IEnumerable<ClockRow> CreateClockLayout(TimeSpan time)
+        private IEnumerable<ClockRow> CreateClockLayout(Time time)
         {
             RowType[] orderedLayout = 
             {

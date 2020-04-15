@@ -1,11 +1,12 @@
 ﻿using System;
 using BerlinClock.Enums;
+using BerlinClock.TimeDomain;
 
 namespace BerlinClock.ClockDomain
 {
     public static class ClockRowFactory
     {
-        public static ClockRow CreateClockRow(RowType rowType, TimeSpan time)
+        public static ClockRow CreateClockRow(RowType rowType, Time time)
         {
             switch (rowType)
             {
