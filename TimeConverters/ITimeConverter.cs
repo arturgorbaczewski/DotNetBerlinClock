@@ -2,6 +2,6 @@
 {
     public interface ITimeConverter
     {
-        string ConvertTime(string aTime);
+        string ConvertTime(string strTime);
     }
 }

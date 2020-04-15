@@ -11,9 +11,9 @@ namespace BerlinClock.TimeConverters
             _clock = clock;
         }
 
-        public string ConvertTime(string aTime)
+        public string ConvertTime(string strTime)
         {
-            return _clock.GetFormattedTime(aTime);
+            return _clock.GetFormattedTime(strTime);
         }
     }
 }
