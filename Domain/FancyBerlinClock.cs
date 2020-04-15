@@ -10,7 +10,22 @@ namespace BerlinClock.Domain
     {
         public string GetFormattedTime(string time)
         {
+            var layout = CreateClockLayout(time);
+            var fancyTime = ConvertLayoutToTime(layout);
+
+            return fancyTime;
+        }
+
+        private IEnumerable<BerlinClockRow> CreateClockLayout(string time)
+        {
             throw new NotImplementedException();
+        }
+
+        private string ConvertLayoutToTime(IEnumerable<BerlinClockRow> rows)
+        {
+            var sb = new StringBuilder();
+
+            return sb.ToString();
         }
     }
 }
