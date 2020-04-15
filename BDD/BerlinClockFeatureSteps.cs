@@ -9,8 +9,7 @@ namespace BerlinClock.BDD
     {
         private ITimeConverter _berlinClock = new TimeConverter();
         private string _theTime;
-
-        
+      
         [When(@"the time is ""(.*)""")]
         public void WhenTheTimeIs(string time)
         {

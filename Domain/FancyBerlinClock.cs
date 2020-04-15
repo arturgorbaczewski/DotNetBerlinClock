@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BerlinClock.Domain
 {
-    public class BerlinClock : IFancyClock
+    public class FancyBerlinClock : IFancyClock
     {
         public string GetFormattedTime(string time)
         {
