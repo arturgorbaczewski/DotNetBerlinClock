@@ -1,14 +1,12 @@
-﻿using BerlinClock.ClockDomain;
-using BerlinClock.ClockDomain.DomainFacade.Interfaces;
-using BerlinClock.DomainFacade.TimeDomain;
+﻿using BerlinClock.ClockDomain.DomainFacade.Interfaces;
 
 namespace BerlinClock.TimeConverters
 {
     public class TimeConverter : ITimeConverter
     {
-        private readonly IFancyClock _clock;
+        private readonly IClockFacade _clock;
 
-        public TimeConverter(IFancyClock clock)
+        public TimeConverter(IClockFacade clock)
         {
             _clock = clock;
         }

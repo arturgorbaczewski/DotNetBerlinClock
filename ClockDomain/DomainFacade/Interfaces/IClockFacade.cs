@@ -1,6 +1,6 @@
 ﻿namespace BerlinClock.ClockDomain.DomainFacade.Interfaces
 {
-    public interface IFancyClock
+    public interface IClockFacade
     {
         string GetFormattedTime(string time);
     }

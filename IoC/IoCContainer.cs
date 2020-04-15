@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using BerlinClock.ClockDomain;
+using BerlinClock.ClockDomain.DomainFacade;
 using BerlinClock.ClockDomain.DomainFacade.Interfaces;
 using BerlinClock.DomainFacade.TimeDomain;
 using BerlinClock.TimeConverters;
@@ -12,9 +12,10 @@ namespace BerlinClock.IoC
         public static IContainer RegisterDependencies()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType<ColorPicker>().As<IColorPicker>();
             builder.RegisterType<TimeFacade>().As<ITimeFacade>();
-            builder.RegisterType<ClockRow>().As<IClockRow>();
-            builder.RegisterType<FancyBerlinClock>().As<IFancyClock>();
+            builder.RegisterType<ClockRowFacade>().As<IClockRowFacade>();
+            builder.RegisterType<BerlinClockFacade>().As<IClockFacade>();
             builder.RegisterType<TimeConverter>().As<ITimeConverter>();
             return builder.Build();
         }

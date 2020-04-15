@@ -53,13 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
-    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockRow.cs" />
+    <Compile Include="ClockDomain\DomainFacade\ClockRowFacade.cs" />
+    <Compile Include="ClockDomain\DomainFacade\ColorPicker.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockRowFacade.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IColorPicker.cs" />
     <Compile Include="Consts\LightColor.cs" />
     <Compile Include="ClockDomain\Models\ClockLight.cs" />
-    <Compile Include="ClockDomain\ClockRowFactory.cs" />
-    <Compile Include="ClockDomain\FancyBerlinClock.cs" />
-    <Compile Include="ClockDomain\DomainFacade\Interfaces\IFancyClock.cs" />
-    <Compile Include="ClockDomain\ClockRow.cs" />
+    <Compile Include="ClockDomain\DomainFacade\BerlinClockFacade.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockFacade.cs" />
+    <Compile Include="ClockDomain\Models\ClockRow.cs" />
     <Compile Include="IoC\IoCContainer.cs" />
     <Compile Include="TimeDomain\DomainFacade\Interfaces\ITimeFacade.cs" />
     <Compile Include="TimeDomain\Models\Time.cs" />
