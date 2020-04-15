@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BerlinClock.ClockDomain.Interfaces;
 using BerlinClock.Consts;
 using BerlinClock.Enums;
 
 namespace BerlinClock.ClockDomain
 {
-    public class ClockRow
+    public class ClockRow : IClockRow
     {
         private IEnumerable<ClockLight> ClockLights;
 

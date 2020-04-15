@@ -53,11 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
+    <Compile Include="ClockDomain\Interfaces\IClockRow.cs" />
     <Compile Include="Consts\LightColor.cs" />
     <Compile Include="ClockDomain\ClockLight.cs" />
     <Compile Include="ClockDomain\ClockRowFactory.cs" />
     <Compile Include="ClockDomain\FancyBerlinClock.cs" />
-    <Compile Include="ClockDomain\IClock.cs" />
+    <Compile Include="ClockDomain\Interfaces\IClock.cs" />
     <Compile Include="ClockDomain\ClockRow.cs" />
     <Compile Include="TimeDomain\Time.cs" />
     <Compile Include="Enums\RowType.cs" />

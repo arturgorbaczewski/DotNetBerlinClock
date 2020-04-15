@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BerlinClock.ClockDomain.Interfaces;
 using BerlinClock.Enums;
 using BerlinClock.TimeDomain;
 
