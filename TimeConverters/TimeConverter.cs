@@ -8,11 +8,7 @@ namespace BerlinClock.TimeConverters
     {
         private readonly IFancyClock _clock;
 
-        public TimeConverter()
-            : this(new FancyBerlinClock(new TimeFacade())) // TODO: rewrite to DI container with service locator
-        { }
-
-        internal TimeConverter(IFancyClock clock)
+        public TimeConverter(IFancyClock clock)
         {
             _clock = clock;
         }

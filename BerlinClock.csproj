@@ -58,8 +58,9 @@
     <Compile Include="ClockDomain\Models\ClockLight.cs" />
     <Compile Include="ClockDomain\ClockRowFactory.cs" />
     <Compile Include="ClockDomain\FancyBerlinClock.cs" />
-    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClock.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IFancyClock.cs" />
     <Compile Include="ClockDomain\ClockRow.cs" />
+    <Compile Include="IoC\IoCContainer.cs" />
     <Compile Include="TimeDomain\DomainFacade\Interfaces\ITimeFacade.cs" />
     <Compile Include="TimeDomain\Models\Time.cs" />
     <Compile Include="Enums\RowType.cs" />
