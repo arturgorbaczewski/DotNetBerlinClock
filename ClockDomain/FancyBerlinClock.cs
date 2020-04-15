@@ -11,7 +11,7 @@ namespace BerlinClock.ClockDomain
         public string GetFormattedTime(string aTime)
         {
             var time = new Time(aTime);
-            if(!time.IsValid())
+            if(time.IsInvalid)
                 throw new ArgumentNullException("Time format is invalid");
 
             var layout = CreateClockLayout(time);
