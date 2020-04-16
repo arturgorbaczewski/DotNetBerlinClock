@@ -49,3 +49,14 @@ RRRR
 OOOOOOOOOOO
 OOOO
 """
+
+Scenario: Just after midnight 00:00:01
+When the time is "00:00:01"
+Then the clock should look like
+"""
+O
+OOOO
+OOOO
+OOOOOOOOOOO
+OOOO
+"""
