@@ -11,6 +11,8 @@
     <AssemblyName>BerlinClock</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
+    <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
+      <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="ClockDomain\DomainFacade\ClockRowFacade.cs" />
     <Compile Include="ClockDomain\DomainFacade\ColorPicker.cs" />
     <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockRowFacade.cs" />
@@ -67,22 +74,17 @@
     <Compile Include="TimeDomain\Models\Time.cs" />
     <Compile Include="Enums\RowType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
-    </Compile>
     <Compile Include="TimeConverters\TimeConverter.cs" />
     <Compile Include="TimeConverters\ITimeConverter.cs" />
     <Compile Include="TimeDomain\DomainFacade\TimeFacade.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
     <None Include="BDD\BerlinClockFeatureSteps.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BerlinClockFeatureSteps.feature.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
