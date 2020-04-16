@@ -11,6 +11,8 @@
     <AssemblyName>BerlinClock</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +37,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,26 +55,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Classes\ITimeConverter.cs" />
-    <Compile Include="Classes\TimeConverter.cs" />
+    <Compile Include="ClockDomain\DomainFacade\ClockRowFacade.cs" />
+    <Compile Include="ClockDomain\DomainFacade\ColorPicker.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockRowFacade.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IColorPicker.cs" />
+    <Compile Include="Consts\LightColor.cs" />
+    <Compile Include="ClockDomain\Models\ClockLight.cs" />
+    <Compile Include="ClockDomain\DomainFacade\BerlinClockFacade.cs" />
+    <Compile Include="ClockDomain\DomainFacade\Interfaces\IClockFacade.cs" />
+    <Compile Include="ClockDomain\Models\ClockRow.cs" />
+    <Compile Include="IoC\IoCContainer.cs" />
+    <Compile Include="TimeDomain\DomainFacade\Interfaces\ITimeFacade.cs" />
+    <Compile Include="TimeDomain\Models\Time.cs" />
+    <Compile Include="Enums\RowType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeConverters\TimeConverter.cs" />
+    <Compile Include="TimeConverters\ITimeConverter.cs" />
+    <Compile Include="TimeDomain\DomainFacade\TimeFacade.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
     <None Include="BDD\BerlinClockFeatureSteps.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BerlinClockFeatureSteps.feature.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
